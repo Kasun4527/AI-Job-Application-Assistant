@@ -1,11 +1,11 @@
 import os
 from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
+from langchain_groq import ChatGroq
 
-load_dotenv()
+load_dotenv(override=True)
 
-llm = ChatAnthropic(
-    model="claude-sonnet-4-6",
-    api_key=os.getenv("ANTHROPIC_API_KEY"),
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
+    api_key=os.getenv("GROQ_API_KEY"),
     max_tokens=4096
 )
